@@ -55,27 +55,32 @@ class EachTaskPopup extends React.Component {
     let subtasksArr = [];
     for(let i = 0 ; i < this.state.tasks.subtasks.length ;i++){
       console.log(this.state.tasks.subtasks[i]);
-      subtasksArr.push(<li><input type="checkbox"/>{this.state.tasks.subtasks[i].description}</li>);
+      subtasksArr.push(<li id= "subtask">{this.state.tasks.subtasks[i].description}</li>);
     }
     let button = [];
     if(this.state.tasks.status === 1){
-      button.push(<button onClick={this.changeStatus}>Start task</button>);
+      button.push(<button id="assigned" onClick={this.changeStatus}>Start task</button>);
     }
     else if(this.state.tasks.status === 2){
-      button.push(<button onClick={this.changeStatus}>In progress</button>);
+      button.push(<button id="inprogress" onClick={this.changeStatus}>In progress</button>);
     }
     else if(this.state.tasks.status === 3){
-      button.push(<button onClick={this.changeStatus}>Done</button>);
+      button.push(<button id="completed" onClick={this.changeStatus}>Done</button>);
     }
     return (  
       <div className='popup'>  
         <div className='popup_inner'>  
-          <p onClick={this.handleSave}>close</p>
-          <h2>{this.state.tasks.description}</h2>
-          <h2>{this.state.tasks.details}</h2>
-          <h2>{this.state.tasks.due_date}</h2>
-          {button}
-          {subtasksArr}
+          <div id="popupContent">
+            <p id="close" onClick={this.handleSave}>close</p>
+            <h2>{this.state.tasks.description}</h2>
+            <h3>Details</h3>
+            <h4>{this.state.tasks.details}</h4>
+            <h3>Due Date</h3>
+            <h4>{this.state.tasks.due_date}</h4>
+            <h3>Subtasks</h3>
+            {subtasksArr}
+            {button}
+          </div>
         </div>  
       </div>  
     );  

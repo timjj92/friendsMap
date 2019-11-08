@@ -101,11 +101,11 @@ class mainContainer extends Component{
       return (
         <div id="container">
           <UserInfo info={this.props.userInfo}/>
-          <h1 id="header">This is manager</h1>
-          <button onClick={this.toggleAddTask}>Add Tasks</button>
+          <button id="addTask" onClick={this.toggleAddTask}>+ Add Tasks</button>
           {this.state.addTaskPopup ?  <AddTaskPopup userList={this.props.usersArr} closePopup={this.toggleSaveTask}/> : null} 
           {this.state.taskToShow !==0 ?  <EachTaskPopup taskId={this.state.taskToShow} closePopup={this.toggleSaveEachTask}/> : null} 
           {displayArr}
+
         </div>
       )
     }
@@ -113,7 +113,6 @@ class mainContainer extends Component{
       return(
         <div id="container">
           <UserInfo info={this.props.userInfo}/>
-          <h1 id="header">This is intern</h1>
           <UsersTasksContainer  popup={this.toggleEachTask} username= {this.props.userInfo.username} tasks={this.state.tasks}/>
           {this.state.taskToShow !==0 ?  <EachTaskPopup taskId={this.state.taskToShow} closePopup={this.toggleSaveEachTask}/> : null} 
         </div>

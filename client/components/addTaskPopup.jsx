@@ -120,20 +120,23 @@ class AddTaskPopup extends React.Component {
     return (  
       <div className='popup'>  
         <div className='popup_inner'>  
-          <input type="text" name="inputBox" placeholder="Description" onChange={this.updateDescription}></input>
-          <input type="text" name="inputBox" placeholder="Details" onChange={this.updateDetails}></input>
-          <input type="date" name="inputBox" placeholder="Due Date" onChange={this.updateDate}></input>
+          <input id = "descriptionInput" type="text" name="inputBox" placeholder="Description" onChange={this.updateDescription}></input>
+          <textarea id="detailsInput" type="text" name="inputBox" placeholder="Details" onChange={this.updateDetails}></textarea>
+          <input type="date" name="inputBox" placeholder="Due Date" onChange={this.updateDate}></input><br/>
+          <h5>Assign to</h5>
           <input type="text" name="inputBox" placeholder="Assign to" onChange={this.updateAssignedTo}></input>
           <button onClick={this.addAssignee}>Add</button>  
           <ul>
             {memberArr}
           </ul>
+          <h5>Subtasks</h5>
           <input type="text" name="inputBox" placeholder="Subtasks" onChange={this.updateSubtaskVal}></input>
           <button onClick={this.addSubTasks}>Add</button>  
           <ul>
             {subTaskArr}
           </ul>
-          <input type="range" min="1" max="10" defaultValue="1" className="slider" onChange={this.updatePriority}></input>
+          <h5>Priority</h5>
+          <input type="range" min="1" max="10" defaultValue="1" className="slider" onChange={this.updatePriority}></input><br/>
           <button onClick={this.handleSave}>Save</button>  
         </div>  
       </div>  

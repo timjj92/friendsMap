@@ -53,7 +53,7 @@ class App extends Component {
       for(let i = 0; i < this.state.usersArr.length; i++){
         // console.log(this.state.usersArr[i]);
         // // linkArr.push(<a key={i} onClick={()=>{changeUser()}}>{this.state.userArr[i]}</a>)
-        linkArr.push(<p key ={i} id="userNames" onClick={this.changeUser}>{this.state.usersArr[i]}</p>)
+        linkArr.push(<div key ={i} id="userNames" onClick={this.changeUser}><strong>{this.state.usersArr[i]}</strong></div>)
       }
       return (
         <div id='auth'>

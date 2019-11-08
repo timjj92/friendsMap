@@ -21,7 +21,7 @@ const usersTasksContainer = (props) => {
   }
   return (
     <div>
-      <h2>{props.username}</h2>
+      <h3>{props.username}'s tasks</h3>
       <div id="tasksContainer">
         <TaskContainer popup={props.popup} title="assigned" list={assigned}/>
         <TaskContainer popup={props.popup} title="in Progress" list={inProgress}/>

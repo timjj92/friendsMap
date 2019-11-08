@@ -15,7 +15,7 @@ const TaskContainer = (props) => {
   }
   return (
       <div id ="taskContainer">
-        <p>{props.title}</p>
+        <p id="statusId">{props.title}</p>
         {tasks}
       </div>
   )
